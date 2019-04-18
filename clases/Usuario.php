@@ -10,7 +10,10 @@ class Usuario{
     private $nomusuario;
     private $nombre;
     private $clave;
-    function __construct($nomusuario, $nombre, $clave) {
+    private $id;
+    
+   
+        function __construct($nomusuario, $nombre, $clave) {
         $this->nomusuario = $nomusuario;
         $this->nombre = $nombre;
         $this->clave = md5($clave);
@@ -27,6 +30,14 @@ class Usuario{
     function getClave() {
         return $this->clave;
     }
+     function getId() {
+        return $this->id;
+    }
+
+    function setId($id) {
+        $this->id = $id;
+    }
+
 
     function setNomusuario($nomusuario) {
         $this->nomusuario = $nomusuario;
@@ -37,7 +48,7 @@ class Usuario{
     }
 
     function setClave($clave) {
-        $this->clave = $clave;
+        $this->clave = md5($clave);
     }
 
     function Valida(){
@@ -49,21 +60,44 @@ class Usuario{
             return false;
         }
         
-        $PDOst=$dblink->prepare('select id,nombre
+        $PDOst=$dblink->prepare('select idusuario,nombre
                                  from usuario
                                  where nomusu=? and clave=?');
         
         $PDOst->execute(array($this->nomusuario,$this->clave));
-        
-        $row=$PDOst->fetch(PDO::FETCH_OBJ);
-        
-        if (isset($row)){
+
+        if ( $row=$PDOst->fetch(PDO::FETCH_OBJ)){
             $this->nombre=$row->nombre;
+            $this->id=$row->idusuario;
             return true;
         }
         else{
              return false;   
         }
         
+    }
+    
+    function ActualizaClave(){
+        /*Verficamos la existencia*/
+        $db= new DBConnect();
+        $dblink=$db->conexion();
+        
+        if (!isset($dblink)){
+            return false;
+        }
+        
+        $PDOst=$dblink->prepare('update usuario
+                                 set clave=?
+                                 where idusuario=?');
+        echo $this->id;
+        $PDOst->execute(array($this->clave,$this->id));
+
+      /*  if ( $row=$PDOst->fetch(PDO::FETCH_OBJ)){
+            return true;
+        }
+        else{
+             return false;   
+        }
+        */
     }
 }
