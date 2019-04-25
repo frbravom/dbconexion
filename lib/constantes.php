@@ -6,11 +6,12 @@
  * and open the template in the editor.
  */
 session_start();
-define("URLBASE","http://localhost:8081/dbconexion/");
+define("URLBASE",'http://localhost/dbconexion/');
+define("DIRBASE",'C:/xampp/htdocs/dbconexion');
 /*
  * Parametros DB
  * **/
-define("DBNAME","leyes");
-define("DBUSR","duoc");
-define("DBPWD","");
-define("DBHOST","localhost");
+define("DBNAME",'leyes');
+define("DBUSR",'duoc');
+define("DBPWD",'');
+define("DBHOST",'localhost');

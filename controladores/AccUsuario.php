@@ -48,6 +48,8 @@ echo "<a href=".URLBASE."CerrarSesion.php />Cerrar Sesión</a>";
     </head>
     <body>
         <div class="container" style="padding-top: 60px;">
+            <form id="frmusuario" name="frmusuario" method="POST" class="form-horizontal" role="form" action="<?=URLBASE?>controladores/AccActualizaDatosUsuario.php" enctype="multipart/form-data">
+
   <h1 class="page-header">Edit Profile</h1>
   <div class="row">
     <!-- left column -->
@@ -55,7 +57,7 @@ echo "<a href=".URLBASE."CerrarSesion.php />Cerrar Sesión</a>";
       <div class="text-center">
         <img src="http://lorempixel.com/200/200/people/9/" class="avatar img-circle img-thumbnail" alt="avatar">
         <h6>Upload a different photo...</h6>
-        <input type="file" class="text-center center-block well well-sm">
+        <input type="file" name="imgusuario" class="text-center center-block well well-sm">
       </div>
     </div>
     <!-- edit form column -->
@@ -66,7 +68,6 @@ echo "<a href=".URLBASE."CerrarSesion.php />Cerrar Sesión</a>";
         This is an <strong>.alert</strong>. Use this to show important messages to the user.
       </div>
       <h3>Personal info</h3>
-      <form class="form-horizontal" role="form">
         <div class="form-group">
           <label class="col-lg-3 control-label">Nombre:</label>
           <div class="col-lg-8">
@@ -100,13 +101,13 @@ echo "<a href=".URLBASE."CerrarSesion.php />Cerrar Sesión</a>";
         <div class="form-group">
           <label class="col-md-3 control-label">Confirm password:</label>
           <div class="col-md-8">
-            <input class="form-control" value="11111122333" type="password">
+            <input class="form-control" value="" type="password">
           </div>
         </div>
         <div class="form-group">
           <label class="col-md-3 control-label"></label>
           <div class="col-md-8">
-            <input class="btn btn-primary" value="Save Changes" type="button">
+              <input class="btn btn-primary" value="Actualizar" type="submit">
             <span></span>
             <input class="btn btn-default" value="Cancel" type="reset">
           </div>
