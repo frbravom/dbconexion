@@ -7,6 +7,8 @@
  */
 session_start();
 define("URLBASE","http://localhost:8081/dbconexion/");
+define("DIRBASE",'C:/xampp/htdocs/dbconexion');
+
 /*
  * Parametros DB
  * **/

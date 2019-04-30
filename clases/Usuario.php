@@ -10,13 +10,27 @@ class Usuario{
     private $nomusuario;
     private $nombre;
     private $clave;
+    private $nomarchivo;
+    private $archivo;
     private $id;
     
-   
-        function __construct($nomusuario, $nombre, $clave) {
+
+        function __construct($nomusuario, $nombre, $clave, $nomarchivo, $archivo, $id) {
         $this->nomusuario = $nomusuario;
         $this->nombre = $nombre;
         $this->clave = md5($clave);
+        $this->nomarchivo = $nomarchivo;
+        $this->archivo = $archivo;
+        $this->id = $id;
+    }
+
+   
+function getNomarchivo() {
+        return $this->nomarchivo;
+    }
+
+    function getArchivo() {
+        return $this->archivo;
     }
 
     function getNomusuario() {
@@ -39,6 +53,13 @@ class Usuario{
     }
 
 
+    function setNomarchivo($nomarchivo) {
+        $this->nomarchivo = $nomarchivo;
+    }
+
+    function setArchivo($archivo) {
+        $this->archivo = $archivo;
+    }
     function setNomusuario($nomusuario) {
         $this->nomusuario = $nomusuario;
     }
@@ -91,6 +112,30 @@ class Usuario{
                                  where idusuario=?');
         echo $this->id;
         $PDOst->execute(array($this->clave,$this->id));
+
+      /*  if ( $row=$PDOst->fetch(PDO::FETCH_OBJ)){
+            return true;
+        }
+        else{
+             return false;   
+        }
+        */
+    }
+    
+    function ActualizaDatos(){
+        /*Verficamos la existencia*/
+        $db= new DBConnect();
+        $dblink=$db->conexion();
+        
+        if (!isset($dblink)){
+            return false;
+        }
+        
+        $PDOst=$dblink->prepare('update usuario
+                                 set nomarchivo=?,archivo=?
+                                 where idusuario=?');
+        echo $this->id;
+        $PDOst->execute(array($this->nomarchivo,$this->archivo,$this->id));
 
       /*  if ( $row=$PDOst->fetch(PDO::FETCH_OBJ)){
             return true;

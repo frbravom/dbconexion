@@ -55,11 +55,12 @@ and open the template in the editor.
   <h1 class="page-header">Editar Perfil</h1>
   <div class="row">
     <!-- left column -->
+    <form class="form-horizontal" role="form" action="<?=URLBASE?>/controladores/AccActualizaDatosUsuario.php" method="POST" enctype="multipart/form-data"> 
     <div class="col-md-4 col-sm-6 col-xs-12">
       <div class="text-center">
         <img src="http://lorempixel.com/200/200/people/10/" class="avatar img-circle img-thumbnail" alt="avatar">
         <h6>Cambia la fotografía...</h6>
-        <input type="file" class="text-center center-block well well-sm">
+        <input type="file" name="imgusuario" id="imgusuario" class="text-center center-block well well-sm">
       </div>
     </div>
     <!-- edit form column -->
@@ -70,7 +71,7 @@ and open the template in the editor.
         This is an <strong>.alert</strong>. Use this to show important messages to the user.
       </div>
       <h3>Personal info</h3>
-      <form class="form-horizontal" role="form">
+      
         <div class="form-group">
           <label class="col-lg-3 control-label">Nombre:</label>
           <div class="col-lg-8">
@@ -111,7 +112,7 @@ and open the template in the editor.
         <div class="form-group">
           <label class="col-md-3 control-label"></label>
           <div class="col-md-8">
-            <input class="btn btn-primary" value="Save Changes" type="button">
+              <input class="btn btn-primary" value="Actualizar" type="submit">
             <span></span>
             <input class="btn btn-default" value="Cancel" type="reset">
           </div>
