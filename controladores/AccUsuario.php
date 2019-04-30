@@ -58,7 +58,7 @@ and open the template in the editor.
     <form class="form-horizontal" role="form" action="<?=URLBASE?>/controladores/AccActualizaDatosUsuario.php" method="POST" enctype="multipart/form-data"> 
     <div class="col-md-4 col-sm-6 col-xs-12">
       <div class="text-center">
-        <img src="http://lorempixel.com/200/200/people/10/" class="avatar img-circle img-thumbnail" alt="avatar">
+          <img src="<?=URLBASE?>/img/usuario/<?=$oUsr->getNomarchivo();?>" class="avatar img-circle img-thumbnail" alt="avatar">
         <h6>Cambia la fotografía...</h6>
         <input type="file" name="imgusuario" id="imgusuario" class="text-center center-block well well-sm">
       </div>

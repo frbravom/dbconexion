@@ -20,7 +20,7 @@ SKIN: https://bootsnipp.com/snippets/2X0r
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     </head>
-<<<<<<< HEAD
+
     <body>
     <div class="container">    
 
