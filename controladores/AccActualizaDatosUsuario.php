@@ -1,4 +1,5 @@
 <?php
+
 include ("../lib/db.php");
 include ("../clases/Usuario.php");
 include ("../lib/constantes.php");

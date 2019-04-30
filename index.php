@@ -6,15 +6,21 @@ include("lib/constantes.php");
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
+
+SKIN: https://bootsnipp.com/snippets/2X0r
 -->
 <html>
     <head>
         <meta charset="UTF-8">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <title></title>
        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     </head>
+<<<<<<< HEAD
     <body>
     <div class="container">    
 
@@ -78,7 +84,3 @@ and open the template in the editor.
                         </div>                     
                     </div>  
          </div>
-    </body>
-</html>
-
-
